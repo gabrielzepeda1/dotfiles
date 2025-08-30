@@ -1,0 +1,11 @@
+[user]
+    name = gabrielzepeda1
+    email = gabriel.zepeda@solidlogix.com
+
+[includeIf "gitdir:~/Developer/CMS/"]
+    path = ~/.gitconfig-cms
+
+[includeIf "gitdir:~/Developer/solidlogix/**/"]
+    path = ~/.gitconfig-solidlogix
+[credential]
+	helper = manager

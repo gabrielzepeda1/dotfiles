@@ -10,8 +10,14 @@ source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh export LC_ALL=en_US.UTF-8
 
-alias edit-zsh="nvim ~/.zshrc"
-alias reload-zsh="source ~/.zshrc"
+# history setup
+HISTFILE=$HOME/.zhistory # Save command history to .zhistory in home dir
+SAVEHIST=1000 # Keep 1000 commands in the history file on disk
+HISTSIZE=999 # Keep 999 commands in memory during current session
+setopt share_history  # Share history between all open terminal sessions
+setopt hist_expire_dups_first # Remove duplicate commands first when history gets full
+setopt hist_ignore_dups # Ignore duplicate commands for history 
+setopt hist_verify
 
 # completion using arrow keys (based on history)
 bindkey '^[[A' history-search-backward
@@ -31,27 +37,35 @@ export PATH="$JAVA_HOME/bin:$PATH"
 # Created by `pipx` on 2025-05-21 15:58:55
 export PATH="$PATH:/Users/gz-solidlogix/.local/bin"
 
-# Set personal aliases, overriding those provided by Oh My Zsh libs,
-# plugins, and themes. Aliases can be placed here, though Oh My Zsh
-# users are encouraged to define aliases within a top-level file in
-# the $ZSH_CUSTOM folder, with .zsh extension. Examples:
-# - $ZSH_CUSTOM/aliases.zsh
-# - $ZSH_CUSTOM/macos.zsh
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+# --- fzf --- 
+eval "$(fzf --zsh)"
 
+# --- Bat (better cat) ---
+
+export BAT_THEME=tokyonight_night
+
+# --- Eza (better ls) ---
+
+alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
+
+# ---- TheFuck ----
+eval $(thefuck --alias)
+eval $(thefuck --alias fk)
+
+# --- Zoxide (better cd) ---
+eval "$(zoxide init zsh)"
+alias cd="z"
+
+# --- Other aliases ---
+alias edit-zsh="nvim ~/.zshrc"
+alias reload-zsh="source ~/.zshrc"
 alias c="clear"
 alias e="exit"
 
-alias n="nvim"
-
+# --- Git --- 
 alias ga="git add ."
 alias gs="git status"
 
-alias ls="colorls"
 
 # AWS CLI AUTHENTICATION ALIASES from (qmir-ii-aws-cli repo)
 alias star-aws-auth-prod="poetry run python main.py --account 441357678383 --role ADFS-HIDS-ADO22-ADOADMIN-PROD --user cgf1692@qnet.qualnet.org --profile hids-ado22-prod"

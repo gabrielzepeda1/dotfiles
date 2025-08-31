@@ -9,3 +9,5 @@
     path = ~/.gitconfig-solidlogix
 [credential]
 	helper = manager
+[gpg]
+	format = ssh

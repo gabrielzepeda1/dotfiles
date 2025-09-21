@@ -1,25 +1,24 @@
 [user]
     name = gabrielzepeda1
-    email = gabriel.zepeda@solidlogix.com
-
-[includeIf "gitdir:~/Developer/CMS/"]
-    path = ~/.gitconfig-cms
-
-[includeIf "gitdir:~/Developer/solidlogix/**/"]
-    path = ~/.gitconfig-solidlogix
-[credential]
-	helper = manager
+    email = gabrielzepeda846@gmail.com
 [gpg]
 	format = ssh
 [core]
+    editor = vi
     pager = delta
-
 [interactive]
     diffFilter = delta --color-only
-
 [delta]
     navigate = true  # use n and N to move between diff sections
     dark = true      # or light = true, or omit for auto-detection
-
 [merge]
     conflictStyle = zdiff3
+[credential]
+	helper = manager
+
+    # ---------- Conditional includes (directory & remote rules) ----------
+[includeIf "gitdir:~/Developer/solidlogix/**/"]
+    path = ~/.gitconfig-solidlogix
+
+[includeIf "gitdir:~/Developer/CMS/"]
+    path = ~/.gitconfig-cms

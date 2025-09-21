@@ -66,13 +66,10 @@ alias e="exit"
 alias ga="git add ."
 alias gs="git status"
 
-
-# AWS CLI AUTHENTICATION ALIASES from (qmir-ii-aws-cli repo)
-alias star-aws-auth-prod="poetry run python main.py --account 441357678383 --role ADFS-HIDS-ADO22-ADOADMIN-PROD --user cgf1692@qnet.qualnet.org --profile hids-ado22-prod"
-
-export STAR_AWS_ACCOUNT_ID_PROD="441357678383" 
-
-alias star-aws-auth-dev="poetry run python main.py --account 541211618491 --role ADFS-HIDS-ADO22-ADOADMIN-DEV --user cgf1692@qnet.qualnet.org --profile hids-ado22-dev"
-
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /opt/homebrew/bin/terraform terraform
+
+# Load private/local zsh customizations if present
+if [ -f ~/.zshrc.local ]; then
+  source ~/.zshrc.local
+fi

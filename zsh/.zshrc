@@ -29,12 +29,6 @@ export PATH="$PATH:/Users/gz-solidlogix/.local/bin"
 eval "$(fzf --zsh)"
 
 # --- Bat (better cat) ---
-<<<<<<< HEAD:zsh/.zshrc
-export BAT_THEME=tokyonight_night
-||||||| parent of 3fa1709 (updates from macos):.zshrc
-
-export BAT_THEME=tokyonight_night
-=======
 export BAT_THEME=tokyonight_storm
 >>>>>>> 3fa1709 (updates from macos):.zshrc
 

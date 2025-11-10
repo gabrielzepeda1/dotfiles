@@ -30,7 +30,6 @@ eval "$(fzf --zsh)"
 
 # --- Bat (better cat) ---
 export BAT_THEME=tokyonight_storm
->>>>>>> 3fa1709 (updates from macos):.zshrc
 
 # --- Eza (better ls) ---
 

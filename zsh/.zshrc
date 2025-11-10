@@ -29,7 +29,14 @@ export PATH="$PATH:/Users/gz-solidlogix/.local/bin"
 eval "$(fzf --zsh)"
 
 # --- Bat (better cat) ---
+<<<<<<< HEAD:zsh/.zshrc
 export BAT_THEME=tokyonight_night
+||||||| parent of 3fa1709 (updates from macos):.zshrc
+
+export BAT_THEME=tokyonight_night
+=======
+export BAT_THEME=tokyonight_storm
+>>>>>>> 3fa1709 (updates from macos):.zshrc
 
 # --- Eza (better ls) ---
 
@@ -52,6 +59,15 @@ alias e="exit"
 # --- Git --- 
 alias ga="git add ."
 alias gs="git status"
+alias gst="git stash"
+alias gstp="git stash pop"
+alias glo10="git log --oneline -10"
+# --- Vim/Nvim ---
+alias vim="nvim"
+
+# --- Docker --- 
+# docker ps with better output
+alias "docker-pretty-ps"="docker ps --format '{{.Names}}\n\tContainer ID: {{.ID}}\n\tCommand: {{.Command}}\n\tImage: {{.Image}}\n\tCreatedAt: {{.CreatedAt}}\n\tStatus: {{.Status}}'"
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /opt/homebrew/bin/terraform terraform
@@ -60,3 +76,15 @@ complete -o nospace -C /opt/homebrew/bin/terraform terraform
 if [ -f ~/.zshrc.local ]; then
   source ~/.zshrc.local
 fi
+
+# Added by Windsurf
+export PATH="/Users/gz-solidlogix/.codeium/windsurf/bin:$PATH"
+
+# pnpm
+export PNPM_HOME="/Users/gz-solidlogix/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+eval "$(/Users/gz-solidlogix/.local/bin/mise activate zsh)"

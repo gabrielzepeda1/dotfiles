@@ -54,10 +54,10 @@ automatically-unhide-macos-hidden-apps = false
 [gaps]
     inner.horizontal = 7
     inner.vertical =   7
-    outer.left =       7
-    outer.bottom =     7
-    outer.top =        7
-    outer.right =      7
+    outer.left =       5
+    outer.bottom =     5
+    outer.top =        5
+    outer.right =      5
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -89,7 +89,7 @@ automatically-unhide-macos-hidden-apps = false
     # tell application "Terminal"
     #     do script
     #     activate
-    # end tell'
+    # end tell'∫
     # '''
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#layout

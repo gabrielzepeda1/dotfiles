@@ -16,6 +16,7 @@ config = {
     font = wezterm.font("JetBrains Mono", { weight = "Bold" }),
     color_scheme = "GruvboxDarkHard",
     default_cursor_style = "BlinkingBar",
+    front_end = "OpenGL",
     window_padding = {
         left = 5, right = 5, top = 5, bottom = 5
     },

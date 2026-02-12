@@ -122,16 +122,15 @@ automatically-unhide-macos-hidden-apps = false
     alt-7 = 'workspace 7'
     alt-8 = 'workspace 8'
     alt-9 = 'workspace 9'
-
-    alt-a = 'workspace A' # In your config, you can drop workspace bindings that you don't need
+    alt-a = 'workspace A'
     alt-b = 'workspace B' # Browser
-    alt-c = 'workspace C' # Code
-    alt-e = 'workspace E' # File Explorer
+    alt-c = 'workspace C' # Chat
+    alt-e = 'workspace E'
     alt-m = 'workspace M' # Music
-    alt-n = 'workspace N' # Nots
-    alt-p = 'workspace P' 
+    alt-n = 'workspace N' # Notes
+    alt-p = 'workspace P'
     alt-t = 'workspace T' # Terminal
-    alt-w = 'workspace W'
+    alt-w = 'workspace W' # Work (Slack, Teams)
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
     alt-shift-1 = 'move-node-to-workspace 1'
@@ -143,18 +142,15 @@ automatically-unhide-macos-hidden-apps = false
     alt-shift-7 = 'move-node-to-workspace 7'
     alt-shift-8 = 'move-node-to-workspace 8'
     alt-shift-9 = 'move-node-to-workspace 9'
-
     alt-shift-a = 'move-node-to-workspace A'
-    alt-shift-b = 'move-node-to-workspace B' # Browser
-    alt-shift-c = 'move-node-to-workspace C' # Code
-    alt-shift-e = 'move-node-to-workspace E' # File Explorer
-    alt-shift-m = 'move-node-to-workspace M' # Music
-    alt-shift-n = 'move-node-to-workspace N' # Notes
-
-    alt-shift-p = 'move-node-to-workspace P' 
-    alt-shift-t = 'move-node-to-workspace T' # Terminal
+    alt-shift-b = 'move-node-to-workspace B'
+    alt-shift-c = 'move-node-to-workspace C'
+    alt-shift-e = 'move-node-to-workspace E'
+    alt-shift-m = 'move-node-to-workspace M'
+    alt-shift-n = 'move-node-to-workspace N'
+    alt-shift-p = 'move-node-to-workspace P'
+    alt-shift-t = 'move-node-to-workspace T'
     alt-shift-w = 'move-node-to-workspace W'
-    
     alt-shift-f = 'fullscreen'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
@@ -186,15 +182,19 @@ automatically-unhide-macos-hidden-apps = false
     shift-down = ['volume set 0', 'mode main']
 
     [[on-window-detected]]
-    if.app-id = 'com.github.wez.wezterm'
-    run = 'move-node-to-workspace T'
-
-    [[on-window-detected]]
     if.app-id = 'app.zen-browser.zen'
-    run = 'move-node-to-workspace B'
+    run = 'move-node-to-workspace P'
 
     [[on-window-detected]]
     if.app-id = 'com.tinyspeck.slackmacgap'
+    run = 'move-node-to-workspace W'
+
+    [[on-window-detected]]
+    if.app-id = 'com.microsoft.teams2'
+    run = 'move-node-to-workspace W'
+
+    [[on-window-detected]]
+    if.app-id = 'com.zscaler.zscaler'
     run = 'move-node-to-workspace W'
 
     [[on-window-detected]]
@@ -202,5 +202,32 @@ automatically-unhide-macos-hidden-apps = false
     run = 'move-node-to-workspace P'
 
     [[on-window-detected]]
+    if.app-id = 'io.ente.auth.mac'
+    run = 'move-node-to-workspace W'
+
+    [[on-window-detected]]
+    if.app-id = 'com.apple.finder'
+    run = 'layout floating'
+
+    [[on-window-detected]]
+    if.app-id = 'com.apple.ActivityMonitor'
+    run = 'layout floating'
+
+    [[on-window-detected]]
+    if.app-id = 'com.apple.Passwords'
+    run = 'layout floating'
+
+    [[on-window-detected]]
     if.app-id = 'com.spotify.client'
     run = 'move-node-to-workspace M'
+
+    [[on-window-detected]]
+    if.app-id = ['md.obsidian', 'com.apple.Notes']
+    run = 'move-node-to-workspace M'
+
+    [[on-window-detected]]
+    if.app-id="com.mitchellh.ghostty"
+    run= [
+      "layout floating",
+    ]
+l

@@ -5,21 +5,22 @@ local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
 -- This is where you actually apply your config choices
-
 config = {
     automatically_reload_config = true,
     window_close_confirmation = "NeverPrompt",
-    window_decorations = "RESIZE", -- disable the title bar but enable the resizable border
-    window_background_opacity = 0.95,
-    macos_window_background_blur = 90,
+    window_decorations = "INTEGRATED_BUTTONS|RESIZE", -- disable the title bar but enable the resizable border
+    window_background_opacity = 0.94,
+    macos_window_background_blur = 40,
     font_size = 16,
-    font = wezterm.font("JetBrains Mono", { weight = "Bold" }),
-    color_scheme = "GruvboxDarkHard",
+    line_height = 1.2,
+    font = wezterm.font("JetBrains Mono"),
+    color_scheme = "Catppuccin Mocha",
     default_cursor_style = "BlinkingBar",
     front_end = "OpenGL",
     window_padding = {
-        left = 5, right = 5, top = 5, bottom = 5
+        top = "1.5cell",
     },
+    hide_tab_bar_if_only_one_tab = true,
     keys = {
         {
             key = "Enter",

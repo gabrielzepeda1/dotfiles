@@ -13,12 +13,11 @@
     dark = true      # or light = true, or omit for auto-detection
 [merge]
     conflictStyle = zdiff3
+[pull]
+    rebase = true
 [credential]
 	helper = manager
 
     # ---------- Conditional includes (directory & remote rules) ----------
 [includeIf "gitdir:~/Developer/solidlogix/**/"]
     path = ~/.gitconfig-solidlogix
-
-[includeIf "gitdir:~/Developer/CMS/"]
-    path = ~/.gitconfig-cms

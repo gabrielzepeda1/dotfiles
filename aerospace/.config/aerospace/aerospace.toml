@@ -222,12 +222,15 @@ automatically-unhide-macos-hidden-apps = false
     run = 'move-node-to-workspace M'
 
     [[on-window-detected]]
-    if.app-id = ['md.obsidian', 'com.apple.Notes']
-    run = 'move-node-to-workspace M'
+    if.app-id = 'md.obsidian'
+    run = 'move-node-to-workspace N'
+
+    [[on-window-detected]]
+    if.app-id = 'com.apple.Notes'
+    run = 'move-node-to-workspace N'
 
     [[on-window-detected]]
     if.app-id="com.mitchellh.ghostty"
     run= [
       "layout floating",
     ]
-l

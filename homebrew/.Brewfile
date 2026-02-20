@@ -107,6 +107,11 @@ cask "orbstack"       # fast Docker/Linux VM alternative
 # API & Network
 cask "postman"  # API client
 
+# Messaging
+cask "slack"
+
+cask "ente-auth" # 2FA Manager
+
 cask "vlc"   # open-source media player
 
 # Diagramming

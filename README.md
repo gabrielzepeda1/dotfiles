@@ -22,6 +22,7 @@ wezterm/
 |---|---|---|
 | `aerospace` | [AeroSpace](https://github.com/nikitabobko/AeroSpace) | Tiling WM — workspaces, `alt-hjkl` focus/move, app → workspace routing |
 | `git` | Git | Global identity, SSH signing, `delta` pager, rebase-on-pull, work identity conditional include |
+| `homebrew` | Homebrew | `.Brewfile` — all taps, formulas, and casks; `brew bundle` to install everything |
 | `nvim` | Neovim *(submodule)* | Full Neovim config — tracked separately at [`gabrielzepeda1/nvim`](https://github.com/gabrielzepeda1/nvim) |
 | `opencode` | [OpenCode](https://opencode.ai) | AI coding agent — autoupdate, `context7` MCP server |
 | `wezterm` | WezTerm | Terminal — Catppuccin Mocha, JetBrains Mono, opacity, keybindings |
@@ -67,8 +68,21 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 brew install stow
 ```
 
-5. Clone repo and setup:
+5. Clone repo:
 ```bash
 git clone --recurse-submodules <repo-url> ~/dotfiles
 cd ~/dotfiles
 ```
+
+6. Install all Homebrew packages from the Brewfile:
+```bash
+stow homebrew   # symlinks ~/.Brewfile
+brew bundle     # installs all taps, formulas, and casks
+```
+
+7. Symlink all dotfiles:
+```bash
+stow .
+```
+
+8. (Optional) Add `~/.zshrc.local` for machine-specific overrides and env variables — sourced automatically by `.zshrc`.

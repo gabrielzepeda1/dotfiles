@@ -183,7 +183,7 @@ automatically-unhide-macos-hidden-apps = false
 
     [[on-window-detected]]
     if.app-id = 'app.zen-browser.zen'
-    run = 'move-node-to-workspace P'
+    run = 'move-node-to-workspace B'
 
     [[on-window-detected]]
     if.app-id = 'com.tinyspeck.slackmacgap'
@@ -199,7 +199,7 @@ automatically-unhide-macos-hidden-apps = false
 
     [[on-window-detected]]
     if.app-id = 'net.whatsapp.WhatsApp'
-    run = 'move-node-to-workspace P'
+    run = 'layout floating'
 
     [[on-window-detected]]
     if.app-id = 'io.ente.auth.mac'
@@ -231,6 +231,4 @@ automatically-unhide-macos-hidden-apps = false
 
     [[on-window-detected]]
     if.app-id="com.mitchellh.ghostty"
-    run= [
-      "layout floating",
-    ]
+    run= ["layout floating"]

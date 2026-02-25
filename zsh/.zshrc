@@ -38,7 +38,7 @@ export PATH="$PATH:$HOME/.local/bin"
 eval "$(fzf --zsh)"
 
 # --- Bat (better cat) ---
-export BAT_THEME=gruvbox-dark
+export BAT_THEME="Catppuccin Mocha"
 
 # --- Eza (better ls) ---
 alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"

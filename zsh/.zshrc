@@ -39,6 +39,7 @@ eval "$(fzf --zsh)"
 
 # --- Bat (better cat) ---
 export BAT_THEME="Catppuccin Mocha"
+alias cat="bat --paging=never"
 
 # --- Eza (better ls) ---
 alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"

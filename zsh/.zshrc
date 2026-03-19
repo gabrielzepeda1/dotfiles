@@ -38,7 +38,7 @@ export PATH="$PATH:$HOME/.local/bin"
 eval "$(fzf --zsh)"
 
 # --- Bat (better cat) ---
-export BAT_THEME="Catppuccin Mocha"
+export BAT_THEME="TwoDark"
 alias cat="bat --paging=never"
 
 # --- Eza (better ls) ---

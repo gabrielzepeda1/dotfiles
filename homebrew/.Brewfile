@@ -75,7 +75,7 @@ brew "felixkratz/formulae/borders" # window border highlights (JankyBorders)
 # ---------------------------------------------------------------------------
 
 # Window Management & Desktop
-cask "aerospace"          # tiling window manager
+cask "nikitabobko/tap/aerospace"  # tiling window manager
 cask "alt-tab"            # windows-style alt-tab for macOS
 cask "betterdisplay"      # display management
 cask "hiddenbar"          # hide menu bar icons

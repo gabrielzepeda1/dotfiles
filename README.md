@@ -24,65 +24,30 @@ wezterm/
 | `git` | Git | Global identity, SSH signing, `delta` pager, rebase-on-pull, work identity conditional include |
 | `homebrew` | Homebrew | `.Brewfile` — all taps, formulas, and casks; `brew bundle` to install everything |
 | `nvim` | Neovim *(submodule)* | Full Neovim config — tracked separately at [`gabrielzepeda1/nvim`](https://github.com/gabrielzepeda1/nvim) |
-| `opencode` | [OpenCode](https://opencode.ai) | AI coding agent — autoupdate, `context7` MCP server |
-| `wezterm` | WezTerm | Terminal — Catppuccin Mocha, JetBrains Mono, opacity, keybindings |
+| `opencode` | [OpenCode](https://opencode.ai) | AI coding agent — autoupdate, `context7` MCP server, npm manifest/lockfile for plugin dependencies |
+| `wezterm` | WezTerm | Terminal — Kanagawa Bones, JetBrains Mono, keybindings |
 | `zsh` | Zsh | Shell — Starship prompt, aliases, `eza`/`zoxide`/`bat`/`fzf`, `mise`, plugins |
 
-## Quick Start
+## Quick Start (macOS)
 
-**Prerequisites:** `git`, `stow` (`brew install stow`), and any tools you want to configure.
+**Prerequisites:** macOS, Git, and [Homebrew](https://brew.sh). The bootstrap installs the Brewfile packages (including GNU Stow) and links the dotfiles.
 
-1. Clone with submodules:
-   ```sh
-   git clone --recurse-submodules <repo-url> ~/dotfiles
-   ```
-2. Stow everything or a single package:
-   ```sh
-   cd ~/dotfiles
-   stow .                   # all packages
-   stow wezterm             # single package
-   ```
-3. (Optional) Add `~/.zshrc.local` for machine-specific overrides and env variables — sourced automatically by `.zshrc`.
-
-## New setup from scratch (macOS)
-
-1. Check shell (macOS uses zsh by default):
-```bash
-echo $SHELL
-# Should show /bin/zsh
-```
-
-2. Install Homebrew:
-```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-```
-
-3. Add Homebrew to PATH (new terminal):
-```bash
-echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
-eval "$(/opt/homebrew/bin/brew shellenv)"
-```
-
-4. Install stow (required for dotfiles):
-```bash
-brew install stow
-```
-
-5. Clone repo:
-```bash
+```sh
 git clone --recurse-submodules <repo-url> ~/dotfiles
 cd ~/dotfiles
+./scripts/bootstrap.sh
 ```
 
-6. Install all Homebrew packages from the Brewfile:
-```bash
-stow homebrew   # symlinks ~/.Brewfile
-brew bundle     # installs all taps, formulas, and casks
+The script runs `brew bundle` against `homebrew/.Brewfile`, then Stows each package. Stow reports conflicts rather than overwriting existing files; resolve any conflicts and rerun the script. The Brewfile reflects the packages, apps, taps, and VS Code extensions installed when it was last refreshed.
+
+To link just one package after setup:
+
+```sh
+stow wezterm
 ```
 
-7. Symlink all dotfiles:
-```bash
-stow .
-```
+Add `~/.zshrc.local` for machine-specific shell settings; `.zshrc` sources it automatically.
 
-8. (Optional) Add `~/.zshrc.local` for machine-specific overrides and env variables — sourced automatically by `.zshrc`.
+## OpenCode dependencies
+
+The OpenCode config includes `package.json` and `package-lock.json` for npm-managed plugin dependencies. With Node.js/npm installed, run `npm ci` from `opencode/.config/opencode` when you need those dependencies. OpenCode itself is installed separately through Homebrew; its config does not require npm just to load.

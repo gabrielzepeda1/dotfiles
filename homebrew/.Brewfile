@@ -3,125 +3,75 @@
 # Check what's missing: brew bundle check
 # Remove unlisted packages: brew bundle cleanup --force
 
-# ---------------------------------------------------------------------------
-# Taps
-# ---------------------------------------------------------------------------
+# Current Homebrew installations exported with `brew bundle dump`.
 
-# tap "databricks/tap"
 tap "felixkratz/formulae"
 tap "hashicorp/tap"
 tap "nikitabobko/tap"
+tap "abue-ammar/tinycast", trusted: true
+tap "crmne/tap", trusted: { casks: ["fastpotify"] }
 
-# ---------------------------------------------------------------------------
-# Shell
-# ---------------------------------------------------------------------------
+brew "act"
+brew "bat"
+brew "docker"
+brew "eza"
+brew "fzf"
+brew "gh"
+brew "git"
+brew "git-delta"
+brew "git-filter-repo"
+brew "lazygit"
+brew "mise"
+brew "neovim"
+brew "ollama"
+brew "ripgrep"
+brew "opencode"
+brew "openjdk"
+brew "pnpm"
+brew "podman"
+brew "starship"
+brew "stow"
+brew "thefuck"
+brew "tlrc"
+brew "tmux"
+brew "tree"
+brew "uv"
+brew "zoxide"
+brew "zsh-autosuggestions"
+brew "zsh-history-substring-search"
+brew "zsh-syntax-highlighting"
+brew "felixkratz/formulae/borders", trusted: true
 
-brew "stow"                          # dotfiles symlink manager
-brew "starship"                      # cross-shell prompt
-brew "tmux"                          # terminal multiplexer
-brew "zsh-autosuggestions"           # fish-like autosuggestions for zsh
-brew "zsh-syntax-highlighting"       # fish-like syntax highlighting for zsh
-brew "zsh-history-substring-search"  # history search with up/down arrows
-
-# ---------------------------------------------------------------------------
-# CLI Tools
-# ---------------------------------------------------------------------------
-
-brew "bat"              # cat with syntax highlighting
-brew "eza"              # modern ls replacement
-brew "fzf"              # fuzzy finder
-brew "ripgrep"          # fast grep (rg)
-brew "tree"             # directory tree viewer
-brew "tlrc"             # tldr pages client (community-maintained)
-brew "thefuck"          # corrects previous console command
-brew "zoxide"           # smarter cd
-brew "git-delta"        # better git diffs
-brew "git-filter-repo"  # fast git history rewriting
-brew "lazygit"          # terminal UI for git
-brew "act"              # run GitHub Actions locally
-brew "gh"               # GitHub CLI
-
-# ---------------------------------------------------------------------------
-# Editors & Dev Tools
-# ---------------------------------------------------------------------------
-
-brew "neovim"    # hyperextensible Vim-based editor
-brew "lazygit"   # terminal UI for git
-brew "mise"        # manage multiple versions of Node.js and other languages
-brew "pnpm"        # fast, disk-efficient Node package manager
-brew "openjdk"     # OpenJDK (Java)
-brew "uv"          # fast Python package/project manager
-brew "podman"      # daemonless container engine
-brew "opencode"  # AI coding agent
-
-
-# ---------------------------------------------------------------------------
-# Infrastructure / Cloud
-# ---------------------------------------------------------------------------
-
-# brew "hashicorp/tap/terraform"  # infrastructure as code
-# brew "terraform-docs"           # auto-generate Terraform docs
-# brew "tflint"                   # Terraform linter
-# brew "databricks/tap/databricks" # Databricks CLI
-
-# ---------------------------------------------------------------------------
-# Window Management / UI
-# ---------------------------------------------------------------------------
-
-brew "felixkratz/formulae/borders" # window border highlights (JankyBorders)
-
-# ---------------------------------------------------------------------------
-# Casks — Applications
-# ---------------------------------------------------------------------------
-
-# Window Management & Desktop
-cask "nikitabobko/tap/aerospace"  # tiling window manager
-cask "alt-tab"            # windows-style alt-tab for macOS
-cask "betterdisplay"      # display management
-cask "hiddenbar"          # hide menu bar icons
-cask "stats"              # system stats in menu bar
-cask "flux-app"           # blue light filter
-cask "raycast"            # spotlight replacement / launcher
-cask "shottr"             # screenshot tool
-
-# Terminals
-cask "wezterm"   # GPU-accelerated terminal (primary)
-cask "ghostty"   # fast terminal emulator
-
-# Editors & IDEs
-cask "zed"            # Zed editor
-cask "cursor"         # AI-first code editor
-cask "visual-studio-code" # VS Code
-
-# Notes
-cask "obsidian"       # markdown knowledge base
-
-# Browsers
-cask "google-chrome" # Chrome browser
-cask "zen"           # Zen browser
-
-# Containers & Virtualization
-cask "docker-desktop" # Docker Desktop (includes CLI tools)
-cask "orbstack"       # fast Docker/Linux VM alternative
-
-# API & Network
-cask "postman"  # API client
-
-# Messaging
+cask "aerospace"
+cask "betterdisplay"
+cask "chatgpt"
+cask "claude"
+cask "claude-code@latest"
+cask "docker-desktop"
+cask "ente-auth"
+cask "fastpotify"
+cask "font-jetbrains-mono-nerd-font"
+cask "google-chrome"
+cask "helium-browser"
+cask "mac-mouse-fix"
+cask "microsoft-edge"
+cask "obs"
+cask "obsidian"
+cask "qbittorrent"
+cask "raycast"
+cask "shottr"
 cask "slack"
-
-cask "ente-auth" # 2FA Manager
-
-cask "vlc"   # open-source media player
-
-# Diagramming
-cask "drawio" # diagrams.net desktop
-
-# Fonts
-cask "font-iosevka-nerd-font"  # Iosevka Nerd Font
-cask "font-jetbrains-mono-nerd-font" # JetBrains Mono Nerd Font
-
-# VSCode Extensions
+cask "spotify"
+cask "stats"
+cask "stremio"
+cask "telegram"
+cask "abue-ammar/tinycast/tinycast"
+cask "utm"
+cask "visual-studio-code"
+cask "vlc"
+cask "wezterm"
+cask "whatsapp"
+cask "zed"
 
 vscode "akamud.vscode-theme-onedark"
 vscode "albert.tabout"
@@ -148,7 +98,6 @@ vscode "esbenp.prettier-vscode"
 vscode "eserozvataf.one-dark-pro-monokai-darker"
 vscode "formulahendry.auto-rename-tag"
 vscode "github.codespaces"
-vscode "github.copilot"
 vscode "github.copilot-chat"
 vscode "github.github-vscode-theme"
 vscode "github.vscode-github-actions"

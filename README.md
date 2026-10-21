@@ -38,7 +38,9 @@ cd ~/dotfiles
 ./scripts/bootstrap.sh
 ```
 
-The script runs `brew bundle` against `homebrew/.Brewfile`, then Stows each package. Stow reports conflicts rather than overwriting existing files; resolve any conflicts and rerun the script. The Brewfile reflects the packages, apps, taps, and VS Code extensions installed when it was last refreshed.
+The script runs `brew bundle` against `homebrew/.Brewfile`, then Stows each package. Stow reports conflicts rather than overwriting existing files; resolve any conflicts and rerun the script. The Brewfile is a curated list of CLI tools, apps, and required taps. VS Code extensions are not managed by this repository. Docker CLI and Podman are included; Docker Desktop is not. Node.js versions are managed with mise, with pnpm installed through Homebrew.
+
+After Stowing the Homebrew package, use `brew bundle --global` to install packages or `brew bundle check --global` to check for missing packages. Removing a Brewfile entry does not uninstall existing software.
 
 To link just one package after setup:
 

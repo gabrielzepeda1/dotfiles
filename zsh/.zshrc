@@ -20,12 +20,6 @@ source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh
 
-# --- NVM (Node Version Manager) ---
-# Might remove since I just use mise
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 # --- Java (Homebrew OpenJDK) ---
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 export JAVA_HOME=/opt/homebrew/opt/openjdk/libexec/openjdk.jdk/Contents/Home
@@ -43,10 +37,6 @@ alias cat="bat --paging=never"
 
 # --- Eza (better ls) ---
 alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
-
-# ---- TheFuck ----
-eval $(thefuck --alias)
-eval $(thefuck --alias fk)
 
 # --- Zoxide (better cd) ---
 eval "$(zoxide init zsh)"
@@ -73,12 +63,6 @@ alias reload-zsh="source ~/.zshrc"
 alias c="clear"
 alias e="exit"
 
-# --- Terraform (Homebrew) ---
-if [ -f "/opt/homebrew/bin/terraform" ]; then
-    autoload -U +X bashcompinit && bashcompinit
-    complete -o nospace -C /opt/homebrew/bin/terraform terraform
-fi
-
 # --- pnpm ---
 export PNPM_HOME="$HOME/Library/pnpm"
 case ":$PATH:" in
@@ -87,8 +71,8 @@ case ":$PATH:" in
 esac
 
 # --- mise ---
-if [ -f "$HOME/.local/bin/mise" ]; then
-    eval "$($HOME/.local/bin/mise activate zsh)"
+if command -v mise >/dev/null 2>&1; then
+    eval "$(mise activate zsh)"
 fi
 
 # --- Homebrew Environment Variables ---
